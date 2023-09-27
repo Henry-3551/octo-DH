@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+    background: whitesmoke;
+    font-family: 'Poppins' sans-serif;
+    color: aliceblue;
+    height: auto;
+    padding: 0px;
+    opacity: 1;
+    transition-duration: .6s;
+}
+body.dark {
+  background-color: rgba(28,28,28,0.9);
+}
+#header {
+  position: fixed;
+  margin-top: 0px;
+  z-index: 2;
+  padding-left: 10px;
+  height: auto;
+  background: rgba(28, 28, 28, 0.9);
+  margin-bottom: 10px;
+}
+#header #logo{
+  width: 60%;
+  height: auto;
+}
+div{
+  width: 100%;  
+  height: auto;
+}
+button{
+  outline: none;
+}
+.banner{
+  padding-top: 15vh;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+#banner-image{
+  width: 100%;
+}
+.widgets{
+  padding-left: 15px;
+}
+
+.toggle {
+  position: relative;
+  height: 25px;
+  width: 65px;
+  border: 1.5px solid black;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.toggle::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: rgba(28,28,28,0.9);
+  border-radius: 50%;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.toggle.active::before {
+  background-color: #4070f4;
+  left: calc(100% - 20px - 0px);
+}
+
+#dark {
+  display: inline;
+}
+#dark.active{
+  display: none;
+}
+#light{
+  display: none;
+}
+#light.active{
+  display: inline
+}
+main {
+  padding: 15px;
+  height: auto;
+  overflow-y: visible;
+}
+div.owl-carousel > .item{
+  width: 100%;
+  height: 230px;
+  border: 2px dotted pink;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+div.owl-carousel > .item > img{
+  width: 100%;
+}
+section{
+  padding: 15px;
+  background: white;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.box-edit{
+  border: none;
+  width: 25.4%;
+  height: 20px;
+  float: right;
+}
+#btn1{
+  float: left;
+  height: 44px;
+}
+#btn2{
+  float: right;
+  height: 44.1px;
+}
+#btn1,#btn2{
+  width: 35px;
+  border-radius: 7px;
+  border: none;
+}
+#input-heading, textarea{
+  display: block;
+  margin: auto;
+  max-width: 500px;
+  padding: 15px;
+  height: auto;
+  font-size: 0.85em !important;
+  line-height: 1.5rem;
+  background-color: transparent;
+  color: gray;
+  border: none;
+  border-radius: 5px 5px 0 0;
+}
+#input-heading > img{
+  margin-left: -15px;
+  margin-bottom: -40px;
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+}
+textarea {
+         background-color: lightpink;
+         color: aliceblue;
+         z-index: 1;
+         height: 35vh;
+         width: 100%;
+         border-radius: 5px;
+         outline: none;
+         resize: none;
+         overflow-y: scroll;
+         transition-duration: .5s;
+}
+  .bottom-btn{
+    width: 60px;
+    padding: 5px;
+    margin-bottom: 20px;
+    display: inline;
+    outline: none;
+    text-align: center;
+    border: 1.5px solid lightgray;
+    border-radius: 5px;
+    background: transparent;
+  }
+  .bottom-btn:hover{
+    background: lightgray;
+  }
+  .bottom-btn:active{
+    padding: 3px;
+  }
+  .tooltip1, .tooltip2, .tooltip3{
+    position: relative;
+  }
+  .tooltip-content1 {
+         transition-duration: 0.5s;
+         opacity: 0; /* hides the tooltip content */
+         
+         /* positions the tooltip content */
+         position: absolute;
+         z-index: 1;
+         width: 55px;
+         text-align: center;
+         margin-left: -27.5px; /* (width / 2) x -1 */
+         left: 50%;
+         top: -70%; /* to the top */
+      }
+      .tooltip1:hover > .tooltip-content1 {
+         opacity: 1; /* shows the tooltip content on mouse over */
+      }
+      
+ /* Tooltip2 */
+   .tooltip-content2 {
+         transition-duration: 0.4s;
+         opacity: 0;
+         
+         /* positions the tooltip content */
+         position: absolute;
+         z-index: 1;
+         width: 55px;
+         text-align: center;
+         margin-left: -27.5px; /* (width / 2) x -1 */
+         left: 50%;
+         top: -70%; /* to the top */
+      }
+      .tooltip2:hover > .tooltip-content2 {
+         opacity: 1; /* shows the tooltip content on mouse over */
+      }
+      
+  /* Tooltip3 */
+   .tooltip-content3 {
+         transition-duration: 0.2s;
+         opacity: 0;
+         
+         /* positions the tooltip content */
+         position: absolute;
+         z-index: 1;
+         width: 65px;
+         text-align: center;
+         margin-left: -32.5px; /* (width / 2) x -1 */
+         left: 50%;
+         top: -110%; /* to the top */
+      }
+      .tooltip3:hover > .tooltip-content3 {
+         opacity: 1; /* shows the tooltip content on mouse over */
+      }
+ 
+  #img1, #img2, #img3, #img4{
+      width: 100%;
+  }
+  #logo{
+      width: 100%;
+  }
+  
+  #copy-text{
+    position: relative;
+    float: right;
+    top: 0px;
+    right: 0px;
+  }
+  #text-output{
+    padding: 15px;
+    padding-right: 15px;
+    font-size: 0.85em  !important;
+    line-height: 1.5rem;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    height: 35vh;
+    overflow-y: scroll  !important;
+    background: lightpink;
+  }
+  #output{
+      color: ghostwhite;
+      display: block;
+  }
+  #hide{
+      display: block;
+      opacity: 1;
+  }
+  .buttom-widgets{
+    max-width: 500px;
+    margin: auto;
+  }
+  div select{
+      outline: none;
+      padding: 5px;
+      border-radius: 2px;
+      border: 1.2px solid violet;
+      transition: .3s;
+  }
+    div select:hover {
+      border: 2px solid violet;
+      transition: .3s;
+    }
+    

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ii-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Translator App built using Google Translate API. Translates texts to 130+ languages. Simple and user-friendly. PWA Web Apps.">
+  <meta name="robots" content="index, nofollow, max-image-preview:standard " />
+  <meta name="googlebot" content="index" />
+   <meta content="translate" name="google"/>
+  <meta name="author" content="Henry Ani (Henry-3551)">
+  <meta name="theme-color" content="rgba(20,20,20,0.9)">
+  <meta property="og:image" content="icon-512.png">
+
+  <title>Translate app</title>
+  
+  
+  <link rel="manifest" href="manifest.json" crossorigin="use-credentials"/>
+   <link rel="canonical" href="https://henry-3551.github.io/DH-Translator/"/>
+  
+   <link rel="icon" href="logo-icon.png" />
+
+  <!-- HTML -->
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+
+</head>
+
+<body id="body">
+    <!-- Script tags -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    });
+  </script>
+  
+
+    <div id="header">
+      <img id="logo" src="logo.png" alt="Logo">
+    </div>
+    
+    <div class="banner" oncontextmenu="return false">
+      <div class="widgets">
+        
+        <button class="toggle">
+          <span id="dark">🌙 Dark</span>
+          <span id="light">Light 🌞</span>
+        </button>
+      </div>
+      <img id="banner-image" src="banner.jpg" alt="banner.jpg">
+    </div>
+    
+  <main>
+    
+      <!-- carousel slide -->
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="1.jpg" alt="1.jpg">
+        </div>
+        <div class="item">
+          <img src="2.jpg" alt="2.jpg">
+        </div>
+        <div class="item">
+          <img src="3.jpg" alt="3.jpg">
+        </div>
+        <div class="item">
+          <img src="4.jpg" alt="4.jpg">
+        </div>
+        <div class="item">
+          <img src="5.jpg" alt="5.jpg">
+        </div>
+        <div class="item">
+          <img src="6.jpg" alt="6.jpg">
+        </div>
+        <div class="item">
+          <img src="7.jpg" alt="7.jpg">
+        </div>
+        <div class="item">
+          <img src="8.jpg" alt="8.jpg">
+        </div>
+      </div>
+      
+    <!--<div class="video" oncontextmenu="return false">
+      <video src="video.mp4" poster="#" autoplay muted loop>
+    </div>-->
+    
+    <section>
+    <div class="translation-box" oncontextmenu="return true">
+      
+      <div class="box-edit">
+        
+        <button class="tooltip1" id="btn1" onclick="doThis()">
+           <img class="tooltip-content1" src="cleared.png" alt="Cleared">
+           
+          <img id="img1" src="clear.png" alt="Clear" title="Clear Text">
+        </button>
+        
+        <button class="tooltip2" id="btn2">
+          <img class="tooltip-content2" src="pasted.png" alt="Pasted">
+          
+          <img id="img2" src="paste.png" alt="Paste" title="Paste Text">
+        </button>
+        
+      </div>
+      
+      <div id="input-heading"><img src="enter-text.png" alt="Enter-Text"></div>
+      
+      <textarea id="input" autocomplete="true">    </textarea>
+
+      <div id="text-output">
+        <p id="hide" class="hidden">Show translated sentence here...</p>
+        <p id="output"></p>
+      </div>
+      </div>
+
+    <div class="bottom-widgets">
+      <button class="bottom-btn" onclick="getValue()" oncontextmenu="return false">
+        <img id="img3" src="move_to.png" alt="Move_to">
+      </button> 
+
+      <button class="bottom-btn tooltip3" id="copy-text" onclick="copyText()">
+        
+        <img src="copied.png" class="tooltip-content3" alt="Copied" />
+        
+        <img id="img4" src="copy.png" alt="Copy"/>
+      </button>
+    </div>
+      
+    </section>
+
+      <div id="google_translate_element" style="background: white; padding: 15px; border-radius: 10px;"></div>
+
+      <!-- function which will translate the web page using google translator -->
+
+  </main>
+  
+
+  <!-- Script code for google translator API -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+
+
+
+  <!-- Project -->
+  <script src="translate.js"></script>
+</body>
+
+</html>

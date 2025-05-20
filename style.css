@@ -299,15 +299,6 @@ i.fi:hover{
 }
 
 
-@media only screen and (max-width: 480px) {
-  .horizontal-nav h5{
-    position: relative;
-    font-size: .6rem;
-    opacity: .8;
-    transition-duration: .2s;
-    margin-bottom: 0;
-  }
-
 .horizontal-nav{
   position: fixed; 
   z-index: 100;
@@ -319,8 +310,8 @@ i.fi:hover{
   justify-content: space-between;
   flex-direction: row;
   width: 100%;
-  min-height: 3rem;
-  background: rgb(30,30,30);
+  min-height: 2rem;
+  background: aliceblue;
   border-top: 1px solid rgba(0,0,0,0.2);
  /* box-shadow: 0 -2px 10px 0px rgba(0,0,0,0.1);*/
 }
@@ -350,5 +341,4 @@ i.fi:hover{
 }
 .horizontal-nav div:hover i.fi{
   color: royalblue;
-}
 }

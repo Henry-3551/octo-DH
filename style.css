@@ -152,7 +152,7 @@ section{
 textarea {
          background-color: #4070f4;
          color: aliceblue;
-         font-size: 0.85em  !important;
+         font-size: 1em  !important;
          z-index: 1;
          height: 35vh;
          width: 100%;

@@ -14,7 +14,7 @@ body {
     transition-duration: .6s;
 }
 body.dark {
-  background-color: rgba(28,28,28,0.9);
+  background-color: rgba(28,28,28,0.8);
 }
 #header {
   position: fixed;
@@ -150,7 +150,7 @@ section{
   height: auto;
 }
 textarea {
-         background-color: lightpink;
+         background-color: #4070f4;
          color: aliceblue;
          z-index: 1;
          height: 35vh;
@@ -263,7 +263,7 @@ textarea {
     background: lightpink;
   }
   #output{
-      color: ghostwhite;
+      color: aliceblue;
       display: block;
   }
   #hide{
@@ -278,11 +278,11 @@ textarea {
       outline: none;
       padding: 5px;
       border-radius: 2px;
-      border: 1.2px solid violet;
+      border: 1.5px solid #4070f4;
       transition: .3s;
   }
     div select:hover {
-      border: 2px solid violet;
+      border: 2px solid #4070f4;
       transition: .3s;
     }
     

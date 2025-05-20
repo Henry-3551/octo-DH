@@ -53,7 +53,7 @@ button{
   position: relative;
   height: 25px;
   width: 65px;
-  border: 1.5px solid black;
+  border: 1.5px solid #4070f4;
   border-radius: 20px;
   background-color: whitesmoke;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -168,7 +168,7 @@ textarea {
     display: inline;
     outline: none;
     text-align: center;
-    border: 1.5px solid lightgray;
+    border: 1.5px solid #4070f4;
     border-radius: 5px;
     background: transparent;
   }
@@ -260,7 +260,7 @@ textarea {
     width: 100%;
     height: 35vh;
     overflow-y: scroll  !important;
-    background: lightpink;
+    background: #4070f4;
   }
   #output{
       color: aliceblue;

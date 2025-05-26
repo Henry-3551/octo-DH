@@ -1,19 +1,22 @@
 {
-  "name": "Translator App",
+  "name": "Henry's Translator App",
   "short_name": "DHT App",
-  "start_url": "./index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4070f4",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
+      "purpose": "any maskable",
       "type": "image/png"
     },
     {
       "src": "logo-icon.png",
       "sizes": "512x512",
+      "purpose": "any maskable",
       "type": "image/png"
     }
   ]

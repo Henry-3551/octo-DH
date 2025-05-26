@@ -16,7 +16,7 @@
   <title>Translator app</title>
   
   
-  <link rel="manifest" href="manifest.json" crossorigin="use-credentials"/>
+  <link rel="manifest" href="manifest.json"/>
    <link rel="canonical" href="https://henry-3551.github.io/octo-DH/"/>
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
@@ -39,7 +39,20 @@
 </head>
 
 <body id="body" onselectstart="return false">
-
+<script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+</script>
+  
     <div id="header">
       <img id="logo" src="logo.png" alt="Logo">
     </div>
@@ -147,11 +160,7 @@
 
   <!-- Project -->
   <script src="translate.js"></script>
-  <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-  </script>
+
   <script src="//code.tidio.co/exnro3yewgil7z8hzu0whumcskwsrii3.js" async></script>
 </body>
 

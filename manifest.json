@@ -1,10 +1,10 @@
 {
-  "name": "DH Translator App",
+  "name": "Translator App",
   "short_name": "DHT App",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4a90e2",
+  "theme_color": "#4070f4",
   "icons": [
     {
       "src": "icon-192.png",

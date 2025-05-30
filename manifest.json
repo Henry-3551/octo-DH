@@ -1,7 +1,7 @@
 {
   "name": "Henry's Translator App",
   "short_name": "DHT App",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4070f4",

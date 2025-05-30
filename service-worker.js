@@ -2,12 +2,11 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open('tts-cache').then(cache => {
       return cache.addAll([
-        '/',
-        '/index.html',
-        '/manifest.json',
-        '/service-worker.js',
-        '/logo-192.png',
-        '/logo-512.png'
+        'index.html',
+        'manifest.json',
+        'service-worker.js',
+        'logo-192.png',
+        'logo-512.png'
       ]);
     })
   );

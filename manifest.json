@@ -10,15 +10,39 @@
   "categories": ["productivity", "utilities"],
   "icons": [
     {
-      "src": "henrify-icon-192.png",
-      "sizes": "192x192",
-      "purpose": "any maskable",
+      "src": "henrify-icon-64.png",
+      "sizes": "64x64",
+      "purpose": "any",
       "type": "image/png"
     },
     {
       "src": "henrify-icon-128.png",
       "sizes": "128x128",
       "purpose": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "henrify-icon-180.png",
+      "sizes": "180x180",
+      "purpose": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "henrify-icon-192.png",
+      "sizes": "192x192",
+      "purpose": "any maskable",
+      "type": "image/png"
+    },
+    {
+      "src": "henrify-icon-256.png",
+      "sizes": "256x256",
+      "purpose": "any maskable",
+      "type": "image/png"
+    },
+    {
+      "src": "henrify-icon-384.png",
+      "sizes": "384x384",
+      "purpose": "any maskable",
       "type": "image/png"
     },
     {

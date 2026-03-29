@@ -1,172 +1,232 @@
 <!DOCTYPE html>
-<html lang="ii-CN">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fast, modern translator that supports 30+ languages with offline-ready PWA support." />
+    <meta name="author" content="Henry Ani (Henry-3551)" />
+    <meta name="theme-color" content="#061124" />
+    <meta property="og:image" content="henrify-icon-512.png" />
+    <meta name="msapplication-TileImage" content="henrify-icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Henrify Translator" />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link rel="icon" sizes="128x128" href="henrify-icon-128.png" />
+    <link rel="icon" sizes="192x192" href="henrify-icon-192.png" />
+    <link rel="icon" sizes="512x512" href="henrify-icon-512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="henrify-icon-192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="henrify-icon-512.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Henrify Translator</title>
+  </head>
+  <body>
+    <noscript>This app works best with JavaScript enabled.</noscript>
+    <div class="app-shell">
+      <header class="hero" oncontextmenu="return false">
+        <div class="brand">
+          <img src="logo.svg" alt="Henrify Translator logo" width="96" height="96" />
+          <div>
+            <p class="eyebrow">Realtime • Private • PWA</p>
+            <h1>Henrify Translator</h1>
+            <p class="lede">
+              Type, paste, or dictate text and Henrify instantly gives you polished translations—optimized for clarity on
+              every device.
+            </p>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="ghost-btn" id="themeToggle" aria-pressed="false">
+            <span class="material-icons-round"> dark_mode </span>
+            <span class="label">Dark</span>
+          </button>
+          <button class="primary-btn" id="installTrigger">
+            <span class="material-icons-round"> download_done </span>
+            <span class="label">Install App</span>
+          </button>
+        </div>
+      </header>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Translator App built using Google Translate API. Translates texts to 130+ languages. Simple and user-friendly. PWA Web Apps."/>
-  <meta name="googlebot" content="index" />
+      <main class="workspace">
+        <section class="panel input-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Source</p>
+              <h2>Input</h2>
+            </div>
+            <div class="selector-group">
+              <label for="sourceLang" class="sr-only">Source language</label>
+              <select id="sourceLang"></select>
+              <button class="ghost-btn swap-btn" id="swapBtn" aria-label="Swap languages">
+                <span class="material-icons-round"> sync_alt </span>
+              </button>
+              <label for="targetLang" class="sr-only">Target language</label>
+              <select id="targetLang"></select>
+            </div>
+          </div>
 
-   <meta content="translate" name="google"/>
-  <meta name="author" content="Henry Ani (Henry-3551)">
-  <meta name="theme-color" content="#4070f4">
-  <meta property="og:image" content="logo-512.png">
-  
-  <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Translator App">
-    <link rel="apple-touch-icon" href="logo-192.png"> 
-  <link rel="manifest" href="manifest.json">
-  
+          <textarea
+            id="sourceText"
+            placeholder="Type or paste text here..."
+            spellcheck="true"
+            autocomplete="off"
+            rows="8"
+          ></textarea>
 
-  <title>Translator app</title>
-  
-   <link rel="canonical" href="https://henry-3551.github.io/octo-DH/"/>
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+          <div class="action-tray">
+            <button class="icon-btn" id="clearBtn">
+              <span class="material-icons-round"> backspace </span>
+              <span>Clear</span>
+            </button>
+            <button class="icon-btn" id="pasteBtn">
+              <span class="material-icons-round"> content_paste_go </span>
+              <span>Paste</span>
+            </button>
+            <button class="icon-btn" id="dictateBtn">
+              <span class="material-icons-round"> keyboard_voice </span>
+              <span>Speak</span>
+            </button>
+            <div class="spacer"></div>
+            <button class="accent-btn" id="translateBtn">
+              <span class="material-icons-round"> translate </span>
+              <span>Translate</span>
+            </button>
+          </div>
+        </section>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  
-   <link rel="icon" href="logo-512.png" />
+        <section class="panel output-panel" aria-live="polite">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Preview</p>
+              <h2>Output</h2>
+            </div>
+            <div class="preview-actions">
+              <button class="ghost-btn" id="speakBtn">
+                <span class="material-icons-round"> volume_up </span>
+                <span class="label">Speak</span>
+              </button>
+              <button class="ghost-btn" id="copyBtn">
+                <span class="material-icons-round"> content_copy </span>
+                <span class="label">Copy</span>
+              </button>
+            </div>
+          </div>
 
-  <!-- HTML -->
+          <article class="output-card">
+            <p id="statusLine">Waiting for input…</p>
+            <p id="translatedText"></p>
+          </article>
+          <p class="meta-line" id="metaLine">Auto mode • Idle</p>
+        </section>
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <section class="panel phrasebook-panel" aria-live="polite">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Offline</p>
+              <h2>Phrasebook</h2>
+            </div>
+            <button class="ghost-btn" id="clearPhrasebook">
+              <span class="material-icons-round"> delete_sweep </span>
+              <span class="label">Clear</span>
+            </button>
+          </div>
+          <p class="meta-line" id="phraseEmpty">Translate something twice to pin it here automatically.</p>
+          <ul class="phrase-list" id="phraseList" aria-live="polite"></ul>
+        </section>
 
-  <link rel="stylesheet" href="style.css"/>
-  
- <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
-  
+        <section class="panel settings-panel" aria-live="polite">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Control</p>
+              <h2>Settings</h2>
+            </div>
+          </div>
 
-</head>
+          <div class="settings-grid">
+            <div class="setting-row">
+              <div>
+                <p class="setting-label">Auto Translate</p>
+                <p class="setting-help">Translate as you type</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="autoTranslateToggle" aria-label="Toggle auto translate" />
+                <span class="slider" aria-hidden="true"></span>
+              </label>
+            </div>
 
-<body id="body" onselectstart="return false">
-<script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(registration => {
-                        console.log('Service Worker registered successfully:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.error('Service Worker registration failed:', error);
-                    });
-            });
-        }
-</script>
-  
-    <div id="header">
-      <img id="logo" src="logo.png" alt="Logo">
+            <div class="setting-row">
+              <div>
+                <p class="setting-label">Phrasebook capture</p>
+                <p class="setting-help">Store repeated phrases offline</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="phrasebookToggle" aria-label="Toggle phrasebook capture" />
+                <span class="slider" aria-hidden="true"></span>
+              </label>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <p class="setting-label">Font family</p>
+                <p class="setting-help">Choose a vibe</p>
+              </div>
+              <div class="setting-control">
+                <label for="fontFamilySelect" class="sr-only">Font family</label>
+                <select id="fontFamilySelect">
+                  <option value="modern">Modern (Space Grotesk)</option>
+                  <option value="sans">Minimal (DM Sans)</option>
+                  <option value="system">System UI</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="setting-row">
+              <div>
+                <p class="setting-label">Font size</p>
+                <p class="setting-help">Adjust readability</p>
+              </div>
+              <div class="setting-control range-control">
+                <label for="fontSizeSlider" class="sr-only">Font size</label>
+                <input type="range" id="fontSizeSlider" min="90" max="120" step="5" />
+                <span class="setting-value" id="fontSizeValue">100%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="install-banner hidden" id="installBanner">
+        <div>
+          <h3>Install Henrify</h3>
+          <p>Keep the translator ready offline with a single tap.</p>
+        </div>
+        <div class="banner-actions">
+          <button class="ghost-btn" id="dismissInstall">Not now</button>
+          <button class="accent-btn" id="confirmInstall">Install</button>
+        </div>
+      </section>
     </div>
-    
-    <div class="banner" oncontextmenu="return false">
-      <div class="widgets">
-        
-        <button class="toggle">
-          <span id="dark">🌙 Dark</span>
-          <span id="light">Light 🌞</span>
-        </button>
-      </div>
-      <img id="banner-image" src="banner.jpg" alt="banner.jpg">
-    </div>
-    
-  <main>
-    <!--<div class="video" oncontextmenu="return false">
-      <video src="video.mp4" poster="#" autoplay muted loop>
-    </div>-->
-    
-    <section>
-    <div class="translation-box" oncontextmenu="return true">
-      
-      <div class="box-edit">
-        
-        <button class="tooltip1" id="btn1" onclick="doThis()">
-           <img class="tooltip-content1" src="cleared.png" alt="Cleared">
-           
-          <img id="img1" src="clear.png" alt="Clear" title="Clear Text">
-        </button>
-        
-        <button class="tooltip2" id="btn2">
-          <img class="tooltip-content2" src="pasted.png" alt="Pasted">
-          
-          <img id="img2" src="paste.png" alt="Paste" title="Paste Text">
-        </button>
-        
-      </div>
-      
-      <div id="input-heading"><img src="enter-text.png" alt="Enter-Text"></div>
-      
-      <textarea id="input" autocomplete="true">    </textarea>
 
-      <div id="text-output">
-        <p id="hide" class="hidden">Show translated sentence here...</p>
-        <p id="output"></p>
-      </div>
-      </div>
+    <div class="toast-stack" id="toastStack" aria-live="assertive" aria-atomic="true"></div>
 
-    <div class="bottom-widgets">
-      <button class="bottom-btn" onclick="getValue()" oncontextmenu="return false">
-        <img id="img3" src="move_to.png" alt="Move_to">
-      </button> 
-
-      <button class="bottom-btn tooltip3" id="copy-text" onclick="copyText()">
-        
-        <img src="copied.png" class="tooltip-content3" alt="Copied" />
-        
-        <img id="img4" src="copy.png" alt="Copy"/>
-      </button>
-    </div>
-      
-    </section>
-
-      <div id="google_translate_element" style="background: white; padding: 15px; border-radius: 10px;"></div>
-
-      <!-- function which will translate the web page using google translator -->
-
-  </main>
-
-  <!--<section class="horizontal-nav">
-      <div onclick="window.location.href='index.html'">
-        <i class="fi fi-rr-home"></i>
-        <h5>HOME</h5>
-      </div>
-   
-      <div onclick="window.location.href='product.html'">
-        <i class="fi fi-rr-box-open"></i>
-        <h5>PRODUCT</h5>
-      </div>
-   
-      <div onclick="window.location.href='deposit.html'" class="current">
-        <i class="fi fi-rr-money-from-bracket"></i>
-        <h5>DEPOSIT</h5>
-      </div>
-   
-      <div onclick="window.location.href='reward.html'">
-        <i class="fi fi-rr-trophy-star"></i>
-        <h5>REWARD</h5>
-      </div>
-   
-      <div onclick="window.location.href='profile.html'">
-        <i class="fi fi-rr-circle-user"></i>
-        <h5>PROFILE</h5>
-      </div>
-   
-  </section>-->
-  
-
-  <!-- Script code for google translator API -->
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
-
-
-
-  <!-- Project -->
-  <script src="translate.js"></script>
-
-  <script src="//code.tidio.co/exnro3yewgil7z8hzu0whumcskwsrii3.js" async></script>
-</body>
-
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .catch(error => console.error("Service worker registration failed", error));
+        });
+      }
+    </script>
+    <script src="translate.js" defer></script>
+  </body>
 </html>

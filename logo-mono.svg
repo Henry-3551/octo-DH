@@ -1,0 +1,14 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Henrify Translator Monochrome Logo</title>
+  <desc id="desc">Simplified single-color version of the Henrify conversation orb.</desc>
+  <defs>
+    <linearGradient id="mono" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff" />
+      <stop offset="100%" stop-color="#dbe4ff" />
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="70" fill="url(#mono)" />
+  <path d="M105 43h-38c-9.4 0-17 7.6-17 17v18c0 9.4 7.6 17 17 17h8l8 12 8-12h14c9.4 0 17-7.6 17-17V60c0-9.4-7.6-17-17-17z" fill="#0f192f" opacity="0.15" />
+  <path d="M53 74c-7.2 0-13 5.8-13 13v12c0 7.2 5.8 13 13 13h10l6 9 6-9h6c7.2 0 13-5.8 13-13v-2.3c-2.4 0.9-5 1.3-7.6 1.3H72l-8 5-5-5h-6c-3.9 0-7-3.1-7-7v-6c0-3 1.9-5.6 4.6-6.6V74z" fill="#0f192f" opacity="0.25" />
+  <path d="M70 94h33" stroke="#0f192f" stroke-width="8" stroke-linecap="round" opacity="0.35" />
+</svg>

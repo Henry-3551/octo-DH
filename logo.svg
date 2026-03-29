@@ -1,0 +1,28 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Henrify Translator Logo</title>
+  <desc id="desc">Interlocking speech bubbles on a gradient orb symbolizing multilingual conversations.</desc>
+  <defs>
+    <linearGradient id="orb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#59e8ff" />
+      <stop offset="50%" stop-color="#3d7bff" />
+      <stop offset="100%" stop-color="#5620ff" />
+    </linearGradient>
+    <linearGradient id="bubble" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#c7d7ff" stop-opacity="0.85" />
+    </linearGradient>
+    <linearGradient id="bubbleSecondary" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c6feff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#8dd4ff" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#020615" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="70" fill="url(#orb)" filter="url(#shadow)" />
+  <path d="M105 43h-38c-9.4 0-17 7.6-17 17v18c0 9.4 7.6 17 17 17h8l8 12 8-12h14c9.4 0 17-7.6 17-17V60c0-9.4-7.6-17-17-17z" fill="url(#bubble)" />
+  <path d="M53 74c-7.2 0-13 5.8-13 13v12c0 7.2 5.8 13 13 13h10l6 9 6-9h6c7.2 0 13-5.8 13-13v-2.3c-2.4 0.9-5 1.3-7.6 1.3H72l-8 5-5-5h-6c-3.9 0-7-3.1-7-7v-6c0-3 1.9-5.6 4.6-6.6V74z" fill="url(#bubbleSecondary)" />
+  <path d="M83 64h11" stroke="#1b2b65" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+  <circle cx="69" cy="64" r="3.5" fill="#1b2b65" opacity="0.6" />
+  <circle cx="96" cy="80" r="4" fill="#1b2b65" opacity="0.6" />
+</svg>

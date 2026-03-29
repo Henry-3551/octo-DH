@@ -1,20 +1,28 @@
 {
-  "name": "Henry's Translator App",
-  "short_name": "DHT App",
+  "name": "Henrify Translator",
+  "short_name": "Henrify",
+  "description": "Realtime translator with offline-ready PWA shell and modern UI.",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4070f4",
+  "background_color": "#040b18",
+  "theme_color": "#061124",
   "orientation": "portrait",
+  "categories": ["productivity", "utilities"],
   "icons": [
     {
-      "src": "logo-192.png",
+      "src": "henrify-icon-192.png",
       "sizes": "192x192",
       "purpose": "any maskable",
       "type": "image/png"
     },
     {
-      "src": "logo-512.png",
+      "src": "henrify-icon-128.png",
+      "sizes": "128x128",
+      "purpose": "any",
+      "type": "image/png"
+    },
+    {
+      "src": "henrify-icon-512.png",
       "sizes": "512x512",
       "purpose": "any maskable",
       "type": "image/png"
